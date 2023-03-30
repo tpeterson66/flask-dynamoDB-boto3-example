@@ -6,10 +6,11 @@ configurations set in config.py file.
 
 from boto3 import resource
 import config
+from os import environ
 
-AWS_ACCESS_KEY_ID = config.AWS_ACCESS_KEY_ID
-AWS_SECRET_ACCESS_KEY = config.AWS_SECRET_ACCESS_KEY
-REGION_NAME = config.REGION_NAME
+AWS_ACCESS_KEY_ID = environ.get('AWS_ACCESS_KEY_ID')
+AWS_SECRET_ACCESS_KEY = environ.get('AWS_ACCESS_KEY_ID')
+REGION_NAME = environ.get('AWS_ACCESS_KEY_ID')
 
 resource = resource(
     'dynamodb',
